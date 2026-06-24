@@ -15,23 +15,23 @@ CodeRAG utilizes a completely decoupled full-stack architecture, optimizing heav
 
 ```mermaid
 graph TD
-    Client([🧑‍💻 Developer Client]) -->|Uploads Code / Queries| UI
+    Client([🧑‍💻 Developer Client]) -->|"Uploads Code / Queries"| UI
     
     subgraph Frontend Cloud [Vercel]
         UI[⚛️ React + Vite UI]
     end
     
-    UI -->|REST API (HTTPS)| API
+    UI -->|"REST API (HTTPS)"| API
     
     subgraph Backend Cloud [Hugging Face Spaces]
         API[🚀 FastAPI Orchestrator]
         Embedder[🧠 SentenceTransformers<br>all-MiniLM-L6-v2]
         
-        API <-->|Lazy Load & Batching| Embedder
+        API <-->|"Lazy Load & Batching"| Embedder
     end
     
-    API <-->|IPv4 Pooler (Port 6543)| DB[(🐘 Supabase<br>PostgreSQL + pgvector)]
-    API <-->|Context + Prompt| LLM[⚡ Groq Cloud<br>Llama 3.1 8B]
+    API <-->|"IPv4 Pooler (Port 6543)"| DB[(🐘 Supabase<br>PostgreSQL + pgvector)]
+    API <-->|"Context + Prompt"| LLM[⚡ Groq Cloud<br>Llama 3.1 8B]
 ```
 
 ---
