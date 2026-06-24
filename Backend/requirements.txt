@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+psycopg2-binary
+pgvector
+bcrypt
+pyjwt
+python-multipart
+sentence-transformers
+groq
+python-dotenv
